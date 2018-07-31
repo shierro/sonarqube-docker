@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  sonarqube:
+    image: sonarqube
+    ports:
+      - "9000:9000"
+    environment:
+      - SONARQUBE_JDBC_USERNAME=$POSTGRES_USER
+      - SONARQUBE_JDBC_PASSWORD=$POSTGRES_PASSWORD
+      - SONARQUBE_JDBC_URL=jdbc:postgresql://$POSTGRES_URL/postgres
+    volumes:
+      - ./sonar/conf:/opt/sonarqube/conf
+      - ./sonar/data:/opt/sonarqube/data
+      - ./sonar/extensions:/opt/sonarqube/extensions
+      - ./sonar/bundled-plugins:/opt/sonarqube/lib/bundled-plugins
