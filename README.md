@@ -1,5 +1,5 @@
 ## Sonarqube docker-compose
-  - Run sonarqube inside a docker and persist sonarqube data on host folder
+  - Run sonarqube inside a docker container and persist data on host folder
 
 ### Usage
 ```bash
